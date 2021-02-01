@@ -9,6 +9,6 @@ function mostrar()
 
 	alert(mensaje);
 
-	alert (mensaje);
+	
 }
 
