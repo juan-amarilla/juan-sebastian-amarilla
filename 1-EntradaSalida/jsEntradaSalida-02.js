@@ -8,5 +8,7 @@ function mostrar()
     mensaje = prompt("Por favor ingrese el mensaje: ");
 
 	alert(mensaje);
+
+	alert (mensaje);
 }
 
