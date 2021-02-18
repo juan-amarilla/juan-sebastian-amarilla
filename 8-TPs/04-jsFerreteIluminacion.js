@@ -10,80 +10,61 @@ Amarilla Juan Sebastian
  */
 function CalcularPrecio () 
 {
- 	
-      let lamparasPrecio = 35;
-      let lamparas;
-      let marcaEmpresa;
-      let precioNormal;
-      let precioDescuento;
-      let precioUltimo;
-      let descuento;
-     
-      lamparas = parseInt(document.getElementById("txtIdCantidad").value);
-      marcaEmpresa = document.getElementById("Marca").value;
+  let lamparas;
+  let empresa;
+  let precioTotal;
+  let porcentaje;
+  let precioUltimo;
+  let lamparasPrecio = 35;
+  let descuento;
 
-      if (lamparas >= 6) {
+  lamparas = parseInt(document.getElementById("txtIdCantidad").value);
+  empresa = document.getElementById("Marca").value;
 
-           descuento = 50;
-           precioNormal = lamparas * lamparasPrecio;
-           precioUltimo = precioNormal * descuento / 100;
-      }
-      
-      else if (lamparas == 5 && marcaEmpresa == "ArgentinaLuz") {
-
-          descuento = 40;
-          precioNormal = lamparas * lamparasPrecio;
-          precioDescuento = precioNormal * descuento / 100;
-          precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas == 5 && marcaEmpresa != "ArgentinaLuz") {
-
-          descuento = 30;
-          precioNormal = lamparas * lamparasPrecio;
-          precioDescuento = precioNormal * descuento / 100;
-          precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas == 4 && marcaEmpresa == "ArgentinaLuz"  || lamparas == 4 && marcaEmpresa == "FelipeLamparas") {
-
-          descuento = 25;
-          precioNormal = lamparas * lamparasPrecio;
-          precioDescuento = precioNormal * descuento / 100;
-          precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas == 4 && marcaEmpresa != "ArgentinaLuz"  || lamparas == 4 && marcaEmpresa != "FelipeLamparas") {
-
-          descuento = 20;
-          precioNormal = lamparas * lamparasPrecio;
-          precioDescuento = precioNormal * descuento / 100;
-          precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas == 3 && marcaEmpresa == "ArgentinaLuz") {
-
+  if (lamparas >= 6) {
+    descuento = 50;
+    precioTotal = lamparas * lamparasPrecio;
+    porcentaje = precioTotal * descuento / 100;
+    precioUltimo = precioTotal - porcentaje;
+  }else if (lamparas == 5 && empresa == "ArgentinaLuz") {
+    descuento = 40;
+    precioTotal = lamparas * lamparasPrecio;
+    porcentaje = precioTotal * descuento / 100;
+    precioUltimo = precioTotal - porcentaje;
+   } else if (lamparas == 5 && empresa != "ArgentinaLuz") {
+      descuento = 30;
+      precioTotal = lamparas * lamparasPrecio;
+      porcentaje = precioTotal * descuento / 100;
+      precioUltimo = precioTotal - porcentaje;
+     } else if (lamparas == 4 && empresa == "ArgentinaLuz" || lamparas == 4 && empresa == "FelipeLamparas") {
+         descuento = 25;
+         precioTotal = lamparas * lamparasPrecio;
+         porcentaje = precioTotal * descuento / 100;
+         precioUltimo = precioTotal - porcentaje;
+       } else if (lamparas == 4 && empresa != "ArgentinaLuz" || lamparas == 4 && empresa != "FelipeLamparas") {
+         descuento = 20;
+         precioTotal = lamparas * lamparasPrecio;
+         porcentaje = precioTotal * descuento / 100;
+         precioUltimo = precioTotal - porcentaje;
+       } else if (lamparas == 3 && empresa == "ArgentinaLuz") {
          descuento = 15;
-         precioNormal = lamparas * lamparasPrecio;
-         precioDescuento = precioNormal * descuento / 100;
-         precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas == 3 && marcaEmpresa == "FelipeLamparas") {
-
+         precioTotal = lamparas * lamparasPrecio;
+         porcentaje = precioTotal * descuento / 100;
+         precioUltimo = precioTotal - porcentaje;
+       } else if (lamparas == 3 && empresa == "FelipeLamparas") {
          descuento = 10;
-         precioNormal = lamparas * lamparasPrecio;
-         precioDescuento = precioNormal * descuento / 100;
-         precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas == 3 && marcaEmpresa != "FelipeLamparas" || lamparas == 3 && marcaEmpresa != "ArgentinaLuz") {
-
+         precioTotal = lamparas * lamparasPrecio;
+         porcentaje = precioTotal * descuento / 100;
+         precioUltimo = precioTotal - porcentaje;
+       } else if (lamparas == 3 && empresa != "ArgentinaLuz" || lamparas == 3 && empresa != "FelipeLamparas") {
          descuento = 5;
-         precioNormal = lamparas * lamparasPrecio;
-         precioDescuento = precioNormal * descuento / 100;
-         precioUltimo = precioNormal - precioDescuento;
-      }
-      else if (lamparas >= 1 && lamparas < 3) {
+         precioTotal = lamparas * lamparasPrecio;
+         porcentaje = precioTotal * descuento / 100;
+         precioUltimo = precioTotal - porcentaje;
+       } else if (lamparas >= 1 && lamparas < 3) {
+           precioTotal = lamparas * lamparasPrecio;
+           precioUltimo = precioTotal;
+         }
 
-         precioNormal = lamparas * lamparasPrecio;
-         precioUltimo = precioNormal;
-      }
-
-      document.getElementById("txtIdprecioDescuento").value = precioUltimo;
-
+  document.getElementById("txtIdprecioDescuento").value = precioUltimo;
 }

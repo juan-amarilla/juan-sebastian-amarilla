@@ -1,8 +1,13 @@
+// Amarilla Juan Sebastian
 /*
 al presionar el botón pedir la CLAVE (ayuda: es utn750)*/
 function mostrar()
 {
-	var claveIngresada;
-	claveIngresada = prompt("ingrese el número clave.");
-	
+	let clave;
+
+	clave = prompt("Ingrese la clave."); 
+    
+    while(clave != "utn750") {
+        clave = prompt("Reingrese de nuevo la clave.");     
+    }
 }//FIN DE LA FUNCIÓN

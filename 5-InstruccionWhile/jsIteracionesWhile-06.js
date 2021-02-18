@@ -1,13 +1,19 @@
+// Amarilla Juan Sebastian
 function mostrar()
 {
-	var contador;
-	var acumulador;
-	var numeroIngresado;
+	let promedio;
+	let contador = 0;
+	let acumulador = 0;
+	let numeroIngresado;
 
-	contador=0;
-	acumulador=0;
-	
-	
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
+	while (contador<5) {
+        numeroIngresado = parseInt(prompt("Ingrese un numero"));
+        acumulador = acumulador + numeroIngresado;
+        contador++;
+	}
+
+	promedio = acumulador / 5
+
+	document.getElementById("txtIdSuma").value = acumulador;
+	document.getElementById("txtIdPromedio").value = promedio;
 }//FIN DE LA FUNCIÓN
